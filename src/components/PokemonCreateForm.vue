@@ -21,11 +21,13 @@
             <div>
                 <button @click="addPokemon">Add</button>
             </div>
+
         </div>
     </div>
 </template>
 
 <script>
+import PokemonStore from '@/store/Pokemon'
 export default {
     data() {
         return {
@@ -57,6 +59,9 @@ export default {
             }
             // todo : call action pokemonStore add data
             console.log(payload)
+            PokemonStore.dispatch("addPokemon", payload)
+
+            this.clearForm()
         }
     }
 }
