@@ -1,5 +1,5 @@
-# Yosita Jinda (Lina)
-## 6210451411
+### Yosita Jinda (Lina)
+### 6210451411
 
 # วิธีการรัน
 
