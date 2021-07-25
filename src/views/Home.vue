@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="../assets/logo.png" >
+    <HelloWorld msg="Welcome to My Page"/>
   </div>
 </template>
 
@@ -16,3 +16,13 @@ export default {
   }
 }
 </script>
+
+<style>
+img {
+  width: 20%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+div {
+  font-family: 'Nunito', sans-serif;
+}
+</style>

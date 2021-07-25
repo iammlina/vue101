@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import Axios from 'axios'
 
-let api_endpoint =
-    "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json"
+// let api_endpoint =
+//     "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json" //data raw
 
 Vue.use(Vuex)
 
@@ -14,6 +14,7 @@ export default new Vuex.Store({
   getters: {
       pokemons: (state) => state.data, 
   },
+
 
   // same private setter ใน oop , เปลี่ยนค่าใน state 
   mutations: {
@@ -29,32 +30,33 @@ export default new Vuex.Store({
       },
   },
 
+  
   // same action public methods , ให้ภายนอกเรียกใช้ or ดึงข้อมูลจากภายนอก
   actions: {
       // commit เป็น keyword เรียก mutation
       async fetchPokemon ({ commit }) {
         // สมมติเรียกข้อมูล api
-        // let res = {
-        //     data: [
-        //         {
-        //             name: {
-        //                 english: 'Bulbasaur',
-        //                 japanese: 'Fushikidane'
-        //             },
-        //             type: ['Grass','Poison']
-        //         },
+        let res = {
+            data: [
+                {
+                    name: {
+                        english: 'Bulbasaur',
+                        japanese: 'Fushikidane'
+                    },
+                    type: ['Grass','Poison']
+                },
       
-        //         {
-        //           name: {
-        //               english: 'Bulbasaur2',
-        //               japanese: 'Fushikidane 2'
-        //           },
-        //           type: ['Grass','Poison']
-        //        },
+                {
+                  name: {
+                      english: 'Bulbasaur2',
+                      japanese: 'Fushikidane 2'
+                  },
+                  type: ['Grass','Poison']
+               },
       
-        //     ],
-        // }
-        let res = await Axios.get(api_endpoint)
+            ],
+        }
+        // let res = await Axios.get(api_endpoint) //data raw
         commit('fetch', { res }) // update for ลง state
       },
 

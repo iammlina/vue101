@@ -17,5 +17,8 @@
 </script>
 
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+div {
+  font-family: 'Nunito', sans-serif;
+}
 </style>

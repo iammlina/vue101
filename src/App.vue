@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/numbers">Numbers</router-link> |
-      <router-link to="/pokemons">Pokemons</router-link>
+      <router-link to="/pokemons">Pokemons</router-link> |
+      <router-link to="/ledger">General Ledger</router-link>
     </div>
     <router-view/>
   </div>
@@ -17,6 +18,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  font-family: 'Nunito', sans-serif;
 }
 
 #nav {
@@ -31,4 +33,6 @@
     }
   }
 }
+
+
 </style>
