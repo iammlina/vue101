@@ -4,6 +4,12 @@ import Home from '../views/Home.vue'
 import NumberList from '@/views/NumberList'
 import PokemonList from '@/views/PokemonList'
 import LedgerList from '@/views/LedgerList'
+import Pokedex from '@/views/pokedex/index'
+import PokedexCreate from '@/views/pokedex/Create'
+import Login from '@/views/auth/Login'
+import Logout from '@/views/auth/Logout'
+import Register from '@/views/auth/Register'
+import PokedexEdit from "@/views/pokedex/Edit"
 
 Vue.use(VueRouter)
 
@@ -27,6 +33,36 @@ const routes = [
     path: '/ledger',
     name: 'LedgerList',
     component: LedgerList,
+  },
+  {
+    path: '/pokedex',
+    name: 'Pokedex',
+    component: Pokedex,
+  },
+  {
+    path: '/pokedex/create',
+    name: 'PokedexCreate',
+    component: PokedexCreate,
+  },
+  {
+    path: '/pokedex/:id/edit',
+    name: 'PokedexEdit',
+    component: PokedexEdit,
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+  },
+  {
+    path: '/logout',
+    name: 'Logout',
+    component: Logout,
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register,
   },
   {
     path: '/about',

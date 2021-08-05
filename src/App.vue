@@ -5,13 +5,31 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/numbers">Numbers</router-link> |
       <router-link to="/pokemons">Pokemons</router-link> |
-      <router-link to="/ledger">General Ledger</router-link>
+      <router-link to="/pokedex">Pokedex</router-link> | 
+      <router-link v-if="!isAuthen()" to="/register">Register</router-link> |
+      <router-link v-if="!isAuthen()" to="/login">Login</router-link> |
+      <router-link v-if="isAuthen()" to="/logout">Logout</router-link> |
+      <router-link to="/ledger">General Ledger (HW)</router-link> 
     </div>
     <router-view/>
   </div>
 </template>
 
+<script>
+
+import AuthUser from "@/store/AuthUser"
+export default {
+    methods: {
+      isAuthen() {
+        return AuthUser.getters.isAuthen
+      }
+    }
+
+}
+</script>
+
 <style lang="scss">
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

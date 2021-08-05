@@ -2,13 +2,13 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import Axios from 'axios'
 
-// let api_endpoint =
-//     "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json" //data raw
+let api_endpoint =
+    "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json" //data raw
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: { // fields in oop
+  state: { // fields in oop 
       data: [],
   },
   getters: {
@@ -16,7 +16,7 @@ export default new Vuex.Store({
   },
 
 
-  // same private setter ใน oop , เปลี่ยนค่าใน state 
+  // same private setter ใน oop , เปลี่ยนค่าใน state , acction จะมาเรียก
   mutations: {
       fetch(state, { res }) { //ansigh ค่า
           state.data = res.data
@@ -36,27 +36,27 @@ export default new Vuex.Store({
       // commit เป็น keyword เรียก mutation
       async fetchPokemon ({ commit }) {
         // สมมติเรียกข้อมูล api
-        let res = {
-            data: [
-                {
-                    name: {
-                        english: 'Bulbasaur',
-                        japanese: 'Fushikidane'
-                    },
-                    type: ['Grass','Poison']
-                },
+        // let res = {
+        //     data: [
+        //         {
+        //             name: {
+        //                 english: 'Bulbasaur',
+        //                 japanese: 'Fushikidane'
+        //             },
+        //             type: ['Grass','Poison']
+        //         },
       
-                {
-                  name: {
-                      english: 'Bulbasaur2',
-                      japanese: 'Fushikidane 2'
-                  },
-                  type: ['Grass','Poison']
-               },
+        //         {
+        //           name: {
+        //               english: 'Bulbasaur2',
+        //               japanese: 'Fushikidane 2'
+        //           },
+        //           type: ['Grass','Poison']
+        //        },
       
-            ],
-        }
-        // let res = await Axios.get(api_endpoint) //data raw
+        //     ],
+        // }
+        let res = await Axios.get(api_endpoint) //data raw
         commit('fetch', { res }) // update for ลง state
       },
 
